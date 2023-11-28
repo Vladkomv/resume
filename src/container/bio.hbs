@@ -1,0 +1,180 @@
+{{!--
+Це код container файлу для person сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
+--}}
+
+<div>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div>
+        {{> title data="Biography" big=true}}
+    </div>
+    <hr>
+    <section>
+        <div>
+            <b>Birthdate:</b> {{birthdate}}
+        </div>
+        <br>
+        <div>
+            <b>Birthplace:</b> {{birthplace}}
+        </div>
+        <br>
+        <div>
+            <b>Deathdate:</b> {{deathdate}}
+        </div>
+        <br>
+        <div>
+            <b>Deathplace:</b> {{deathplace}}
+        </div>
+        <br>
+        <div>
+            <b>Nationality:</b> {{nationality}}
+        </div>
+        <br>
+        <div>
+            <b>Occupation:</b> {{occupation}}
+        </div>
+        <br>
+        <br>
+        <div>
+            {{> title data="Knowledge"}}
+            <ul>
+                {{#each known_for}}
+                <li>{{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <div>
+            {{> title data="Education"}}
+            <ul>
+                {{#each education}}
+                <li>
+                    <div>
+                        <b>Degree:</b> {{degree}}
+                    </div>
+                    <div>
+                        <b>Field:</b> {{field}}
+                    </div>
+                    <div>
+                        <b>Institution:</b> {{institution}} (<i>{{year}}</i>)
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <div>
+            {{> title data="Notable publications:"}}
+            <ul>
+                {{#each notable_publications}}
+                <li>
+                    <div>
+                        <strong>"{{title}}"</strong> - published <i>{{publisher}}</i> in {{year}}
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <div>
+            {{> title data="Partners"}}
+            <ul>
+                {{#each partners}}
+                <li>
+                    <div>
+                        <strong>{{name}}</strong> - {{relationship}} ({{years}})
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Awards:"}}
+            <ul>
+                {{#each awards}}
+                <li>
+                    <div>
+                        <strong>{{title}}</strong> - in {{year}} (<em>{{description}}</em>)
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <hr>
+        <br>
+        <div>
+            {{> title data="Influence of works"}}
+            <ol>
+                {{#each influences}}
+                <li>
+                    <div>
+                        {{this}}
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        <br>
+        <div>
+            {{> title data="Influenced by Einstein's work"}}
+            <ol>
+                {{#each influenced}}
+                <li>
+                    <div>
+                        {{this}}
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Einstein quotes"}}
+            <ul>
+                {{#each quotes}}
+                <li>
+                    <p>
+                        <q>{{this}}</q>
+                    </p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{> title data="Major discoveries"}}
+            <ul>
+                {{#each major_discoveries}}
+                <li>
+                    <div>
+                        <strong>{{title}}</strong> - in {{year}} (<em>{{description}}</em>)
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <div>
+            {{#with contributions}}
+            <h3>{{title}} </h3>
+            <div>
+                <strong>{{field}}:</strong> - {{year}}
+                <blockquote>({{description}})</blockquote>
+            </div>
+            {{/with}}
+        </div>
+
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
