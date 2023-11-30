@@ -1,0 +1,116 @@
+{{!--
+Це код container файлу для person сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
+--}}
+
+<div>
+    <h1>{{name}} </h1>
+    <hr>
+    {{> title data="Description"}}
+    <div>{{description}} </div>
+    <br>
+    {{> title data="History"}}
+    <div>{{history.founder}} wrote this language in {{history.year}} </div>
+    <br>
+    <br>
+
+    {{> title data="Types of Js"}}
+    <div aria-label="breadcrumb">
+        {{#each types}}
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">{{this}}</a></li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+    {{> title data="Syntax"}}
+    <div>
+        {{#with syntax}}
+        <div aria-label="Page navigation example">
+            {{#each variables}}
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div aria-label="Page navigation example">
+            {{#each functions}}
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div aria-label="Page navigation example">
+            {{#each conditionals}}
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div aria-label="Page navigation example">
+            {{#each loops}}
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div aria-label="Page navigation example">
+            {{#each classes}}
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
+            </ul>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+    <br>
+    {{> title data="Features of Js"}}
+    <div aria-label="breadcrumb">
+        {{#each features}}
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">{{this}}</a></li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+    {{> title data="libraries of Js"}}
+    <div>
+        {{#each libraries}}
+        <ul>
+            <li class="badge rounded-pill text-bg-info"><a href="#">{{this}}</a></li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+    {{> title data="Tools of Js"}}
+    <div>
+        {{#each tools}}
+        <ul>
+            <li class="badge rounded-pill text-bg-info"><a href="#">{{this}}</a></li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+    {{> title data="Community of Js"}}
+    <div>
+        {{#each community}}
+        <ul>
+            <li class="badge rounded-pill text-bg-info">
+                <a href="#">{{this.name}}</a>
+                <span>({{this.type}})</span>
+            </li>
+        </ul>
+        {{/each}}
+    </div>
+    <br>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
