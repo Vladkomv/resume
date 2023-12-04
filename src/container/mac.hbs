@@ -16,44 +16,46 @@
         {{#with features}}
         <div>
             {{#with processor}}
-            <div><strong>Processor: </strong> {{brand}} {{model}}, {{cores}} cores {{speed}}, cache {{cache}} </div>
+            <div><strong class="badge text-bg-success">Processor: </strong> {{brand}} {{model}}, {{cores}} cores
+                {{speed}}, cache {{cache}} </div>
             {{/with}}
         </div>
         <br>
         <div>
             {{#with memory}}
-            <div><strong>Memory: </strong> {{type}} {{size}}, {{speed}} </div>
+            <div><strong class="badge text-bg-success">Memory: </strong> {{type}} {{size}}, {{speed}} </div>
             {{/with}}
         </div>
         <br>
         <div>
             {{#with storage}}
-            <div><strong>Storage: </strong> {{type}} {{size}}</div>
+            <div><strong class="badge text-bg-success">Storage: </strong> {{type}} {{size}}</div>
             {{/with}}
         </div>
         <br>
         <div>
             {{#with display}}
-            <div><strong>Display: </strong> {{size}}, resolution - {{resolution}}, technology - {{technology}}, color
+            <div><strong class="badge text-bg-info">Display: </strong> {{size}}, resolution - {{resolution}}, technology
+                - {{technology}}, color
                 space - {{color_space}}, brightness - {{brightness}}, refresh rate - {{refresh_rate}}. </div>
             {{/with}}
         </div>
         <br>
         <div>
             {{#with graphics}}
-            <div><strong>Graphics: </strong> {{brand}} {{model}} {{memory}} </div>
+            <div><strong class="badge text-bg-info">Graphics: </strong> {{brand}} {{model}} {{memory}} </div>
             {{/with}}
         </div>
         <br>
-        <div> <strong>Ports: </strong>
+        <div> <strong class="badge text-bg-warning">Ports: </strong>
             <ul>
                 {{#each ports}}
                 <li>
-                    <div> {{this.type}} ({{this.count}} pcs) </div>
+                    <div class="badge text-bg-primary"> {{this.type}} ({{this.count}} pcs) </div>
                     <div>
                         <ul>
                             {{#each this.features}}
-                            <li>{{this}} </li>
+                            <li class="badge text-bg-secondary">{{this}} </li>
                             {{/each}}
                         </ul>
                     </div>
@@ -65,24 +67,24 @@
         <br>
         <div>
             {{#with battery}}
-            <div><strong>Battery: </strong> {{type}} {{capacity}}. {{life}} </div>
+            <div><strong class="badge text-bg-dark">Battery: </strong> {{type}} {{capacity}}. {{life}} </div>
             {{/with}}
         </div>
         <br>
         <div>
-            <div><strong>Weight: </strong> {{weight}}</div>
+            <div><strong class="badge text-bg-dark">Weight: </strong> {{weight}}</div>
             {{#with dimensions}}
-            <div><strong>Dimensions: </strong> {{width}} x {{depth}} x {{height}} </div>
+            <div><strong class="badge text-bg-dark">Dimensions: </strong> {{width}} x {{depth}} x {{height}} </div>
             {{/with}}
         </div>
         <br>
-        <div><strong>Operating system: </strong> {{operating_system}}</div>
+        <div><strong class="badge text-bg-dark">Operating system: </strong> {{operating_system}}</div>
         <br>
-        <div> <strong>Accessories: </strong>
+        <div> <strong class="badge text-bg-danger">Accessories: </strong>
             <ul>
                 {{#each accessories}}
                 <li>
-                    <div> {{this.name}} ({{this.price}} $) </div>
+                    <div class="badge text-bg-info"> {{this.name}} ({{this.price}} $) </div>
                 </li>
                 {{/each}}
             </ul>
