@@ -1,0 +1,115 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>My car</h1>
+    <hr>
+
+    <h2>Manufacturer {{make}} </h2>
+    <div>Model: {{model}} {{year}} color - {{color}} </div>
+    <br>
+    <div>
+        {{> title data="Features of car"}}
+
+        <div>
+            {{#with features}}
+            <div>
+                {{#with interior}}
+                <div>
+                    <strong>Seats:</strong> {{seats.material}}, {{seats.color}} color,
+                    {{#if seats.heated}}
+                    <span>heated and </span>
+                    {{/if}}
+                    {{#if seats.ventilated}}
+                    <span>ventilated</span>
+                    {{/if}}
+                </div>
+                <br>
+                <div>
+                    <strong>Dashboard:</strong> {{dashboard.material}}, {{dashboard.color}} color,
+                    {{#if dashboard.display.touchscreen}}
+                    <span>display {{dashboard.display.type}}, {{dashboard.display.size}} inch, resolution
+                        {{dashboard.display.resolution}}, touchscreen.</span>
+                    {{/if}}
+                </div>
+                <br>
+                <div>
+                    <strong>Audio:</strong> {{audio.system}}, {{audio.speakers}} pcs,
+                    {{#if audio.subwoofer}} <span>with subwoofer,</span> {{/if}}
+                    {{#if audio.bluetooth}} <span>with bluetooth,</span> {{/if}}
+                    {{#if audio.USB}} <span>with USB.</span> {{/if}}
+                </div>
+
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with exterior}}
+                <div><strong>Wheels: </strong>{{wheels.size}}, type {{wheels.type}}, {{wheels.color}} color. </div>
+                <br>
+                <div><strong>Headlights: </strong>{{headlights.type}}, brightness {{headlights.brightness}},
+                    {{#if headlights.automatic}} <span>automatic</span> {{/if}}.
+                </div>
+                <br>
+                <div><strong>Sunroof: </strong>{{sunroof.size}}, {{sunroof.type}} type,
+                    {{#if sunroof.automatic}} <span>automatic</span> {{/if}}.
+                </div>
+
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with safety}}
+                <div><strong>Safety: </strong>airbags front - {{airbags.front}}, airbags side - {{airbags.side}},
+                    airbags knee - {{airbags.knee}}, airbags rear - {{airbags.rear}}. </div>
+                <div>Assistance:
+                    {{#if assistance.blind_spot_monitoring}} blind spot monitoring, {{/if}}
+                    {{#if assistance.rear_cross_traffic_alert}} rear cross traffic alert, {{/if}}
+                    {{#if assistance.lane_departure_warning}} lane departure warning, {{/if}}
+                    {{#if assistance.adaptive_cruise_control}} adaptive cruise control, {{/if}}
+                    {{#if assistance.collision_warning}} collision warning. {{/if}}
+                </div>
+                {{/with}}
+            </div>
+            {{/with}}
+            <br>
+            <div>
+                {{#with engine}}
+                <div><strong>Engine: </strong> {{type}} {{displacement}}, {{horsepower}} HP, {{torque}} Nm,
+                    {{transmission.type}} transmission - {{transmission.gears}} th.
+                </div>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with fuel_economy}}
+                <div><strong>Fuel consumption: </strong> </div>
+                <div>city - {{city}} </div>
+                <div>highway - {{highway}} </div>
+                <div>combined - {{combined}} </div>
+                {{/with}}
+            </div>
+            <br>
+            <div>
+                {{#with price}}
+                <div><strong>Price:</strong> </div>
+                <div>base - {{base}}</div>
+                <div>destination - {{destination}}</div>
+                <div>Options: navigation - {{options.navigation}} + moonroof - {{options.moonroof}} + paint -
+                    {{options.premium_paint}}.</div>
+                <div><strong>Total price: {{total}} </strong> </div>
+
+                {{/with}}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
