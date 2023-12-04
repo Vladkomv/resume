@@ -18,7 +18,7 @@
             <div>
                 {{#with interior}}
                 <div>
-                    <strong>Seats:</strong> {{seats.material}}, {{seats.color}} color,
+                    <strong class="badge text-bg-primary">Seats:</strong> {{seats.material}}, {{seats.color}} color,
                     {{#if seats.heated}}
                     <span>heated and </span>
                     {{/if}}
@@ -28,7 +28,8 @@
                 </div>
                 <br>
                 <div>
-                    <strong>Dashboard:</strong> {{dashboard.material}}, {{dashboard.color}} color,
+                    <strong class="badge text-bg-secondary">Dashboard:</strong> {{dashboard.material}},
+                    {{dashboard.color}} color,
                     {{#if dashboard.display.touchscreen}}
                     <span>display {{dashboard.display.type}}, {{dashboard.display.size}} inch, resolution
                         {{dashboard.display.resolution}}, touchscreen.</span>
@@ -36,7 +37,7 @@
                 </div>
                 <br>
                 <div>
-                    <strong>Audio:</strong> {{audio.system}}, {{audio.speakers}} pcs,
+                    <strong class="badge text-bg-success">Audio:</strong> {{audio.system}}, {{audio.speakers}} pcs,
                     {{#if audio.subwoofer}} <span>with subwoofer,</span> {{/if}}
                     {{#if audio.bluetooth}} <span>with bluetooth,</span> {{/if}}
                     {{#if audio.USB}} <span>with USB.</span> {{/if}}
@@ -47,13 +48,15 @@
             <br>
             <div>
                 {{#with exterior}}
-                <div><strong>Wheels: </strong>{{wheels.size}}, type {{wheels.type}}, {{wheels.color}} color. </div>
+                <div><strong class="badge text-bg-danger">Wheels: </strong>{{wheels.size}}, type {{wheels.type}},
+                    {{wheels.color}} color. </div>
                 <br>
-                <div><strong>Headlights: </strong>{{headlights.type}}, brightness {{headlights.brightness}},
+                <div><strong class="badge text-bg-warning">Headlights: </strong>{{headlights.type}}, brightness
+                    {{headlights.brightness}},
                     {{#if headlights.automatic}} <span>automatic</span> {{/if}}.
                 </div>
                 <br>
-                <div><strong>Sunroof: </strong>{{sunroof.size}}, {{sunroof.type}} type,
+                <div><strong class="badge text-bg-info">Sunroof: </strong>{{sunroof.size}}, {{sunroof.type}} type,
                     {{#if sunroof.automatic}} <span>automatic</span> {{/if}}.
                 </div>
 
@@ -62,7 +65,8 @@
             <br>
             <div>
                 {{#with safety}}
-                <div><strong>Safety: </strong>airbags front - {{airbags.front}}, airbags side - {{airbags.side}},
+                <div><strong class="badge text-bg-light">Safety: </strong>airbags front - {{airbags.front}}, airbags
+                    side - {{airbags.side}},
                     airbags knee - {{airbags.knee}}, airbags rear - {{airbags.rear}}. </div>
                 <div>Assistance:
                     {{#if assistance.blind_spot_monitoring}} blind spot monitoring, {{/if}}
@@ -77,7 +81,8 @@
             <br>
             <div>
                 {{#with engine}}
-                <div><strong>Engine: </strong> {{type}} {{displacement}}, {{horsepower}} HP, {{torque}} Nm,
+                <div><strong class="badge text-bg-dark">Engine: </strong> {{type}} {{displacement}}, {{horsepower}} HP,
+                    {{torque}} Nm,
                     {{transmission.type}} transmission - {{transmission.gears}} th.
                 </div>
                 {{/with}}
@@ -85,7 +90,7 @@
             <br>
             <div>
                 {{#with fuel_economy}}
-                <div><strong>Fuel consumption: </strong> </div>
+                <div><strong class="badge rounded-pill text-bg-warning">Fuel consumption: </strong> </div>
                 <div>city - {{city}} </div>
                 <div>highway - {{highway}} </div>
                 <div>combined - {{combined}} </div>
@@ -94,12 +99,12 @@
             <br>
             <div>
                 {{#with price}}
-                <div><strong>Price:</strong> </div>
+                <div><strong class="badge rounded-pill text-bg-success">Price:</strong> </div>
                 <div>base - {{base}}</div>
                 <div>destination - {{destination}}</div>
                 <div>Options: navigation - {{options.navigation}} + moonroof - {{options.moonroof}} + paint -
                     {{options.premium_paint}}.</div>
-                <div><strong>Total price: {{total}} </strong> </div>
+                <div><strong class="badge rounded-pill text-bg-light">Total price: {{total}} </strong> </div>
 
                 {{/with}}
             </div>
