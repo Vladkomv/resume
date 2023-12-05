@@ -1,0 +1,115 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>{{name}}</h1>
+    <hr>
+
+    <h2>Users:</h2>
+    <div>
+        <ul class="list-group">
+            {{#each users}}
+            <li class="list-group-item">
+                <div>User {{id}}: {{name}} </div>
+                <div>Gender: {{gender}} </div>
+                <div>Age: {{age}} </div>
+                <br>
+                <div>Friends:
+                    <ul class="list-group">
+                        {{#each friends}}
+                        <li class="list-group-item">
+                            <div>User {{id}}: {{name}} </div>
+                            <div>Gender: {{gender}} </div>
+                            <div>Age: {{age}} </div>
+                            <br>
+                            <div>Mutual friends:
+                                <ul class="list-group">
+                                    {{#each mutual_friends}}
+                                    <li class="list-group-item">
+                                        <div>User {{id}}: {{name}} </div>
+                                        <div>Gender: {{gender}} </div>
+                                        <div>Age: {{age}} </div>
+                                        <br>
+                                        {{#if mutual_friends}}
+                                        <div>Mutual friends:
+                                            <ul class="list-group">
+                                                {{#each mutual_friends}}
+                                                <li class="list-group-item">
+                                                    <div>User {{id}}: {{name}} </div>
+                                                    <div>Gender: {{gender}} </div>
+                                                    <div>Age: {{age}} </div>
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        {{/if}}
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{#if groups}}
+                            <div>Groups:
+                                <ul class="list-group">
+                                    {{#each groups}}
+                                    <li class="list-group-item">
+                                        <div>Group {{id}}: {{name}} </div>
+                                        <div>({{description}}) </div>
+                                        <br>
+                                        <div>members:
+                                            <ul class="list-group">
+                                                {{#each members}}
+                                                <li class="list-group-item">
+                                                    <div>User {{id}}: {{name}} </div>
+                                                    <div>Gender: {{gender}} </div>
+                                                    <div>Age: {{age}} </div>
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <br>
+                {{#if groups}}
+                <div>Groups:
+                    <ul class="list-group">
+                        {{#each groups}}
+                        <li class="list-group-item">
+                            <div>Group {{id}}: {{name}} </div>
+                            <div>({{description}}) </div>
+                            <br>
+                            <div>members:
+                                <ul class="list-group">
+                                    {{#each members}}
+                                    <li class="list-group-item">
+                                        <div>User {{id}}: {{name}} </div>
+                                        <div>Gender: {{gender}} </div>
+                                        <div>Age: {{age}} </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <br>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
