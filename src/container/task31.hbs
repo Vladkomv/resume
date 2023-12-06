@@ -1,0 +1,168 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <br>
+    {{#with navigation}}
+    <div class="row">
+        <div class="col-6">
+            <ul class="row">
+                {{#each links}}
+                <li class="col-2 list-group-item"> {{> link2 href=href text=text blank=true}} </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary" type="button" href="{{button.href}}">{{button.text}}</button>
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    <div class="row">
+        <h1>{{header.title}} </h1>
+        <p class="col-6">{{header.description}} </p>
+        <br>
+        <div>
+            <button class="btn btn-primary" type="button" href="{{header.button.href}}">{{header.button.text}}</button>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div>
+        {{#with city}}
+        <h2>{{title}} </h2>
+        <br>
+        <div class="row">
+            <div class="col-10">
+                <ul class="row gy-3 gx-2">
+                    {{#each cards}}
+                    <li class="col-5 ">
+                        <div class="card">
+                            <img src="{{picture.src}} " alt="{{picture.alt}}" class="card-img-top">
+                            <div class="card-body">
+                                <h5>{{title}} </h5>
+                                <p>{{description}} </p>
+                                <a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+        {{/with}}
+        <br>
+        <hr>
+    </div>
+    <div class="">
+        {{#with winner}}
+        <h2>{{title}} </h2>
+        <br>
+        {{#with table}}
+        <div>
+            <table class="table row">
+                <thead class="col-8">
+                    <tr class="row">
+                        {{#each head}}
+                        <th class="col-2">{{this}} </th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody class="col-8">
+                    {{#each user}}
+                    <tr class="row">
+                        <th class="col-2">{{place}} </th>
+                        <td class="col-2">{{name}} </td>
+                        <td class="col-2">{{surname}} </td>
+                        <td class="col-2">{{nickname}} </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/with}}
+        {{/with}}
+        <br>
+        <hr>
+    </div>
+    <div>
+        {{#with gallery}}
+        <h2>{{title}} </h2>
+        <br>
+        <div>
+            <ul class="row">
+                {{#each cards}}
+                <li class="col-4 card">
+                    <div class="card-header">{{name}} </div>
+                    <ul class="list-group">
+                        {{#each items}}
+                        <li class="list-group-item">{{this}} </li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+
+        </div>
+        {{/with}}
+        <br>
+        <br>
+        <hr>
+    </div>
+    <div class="">
+        <br>
+        {{#with relaxion}}
+        <div class="display-3">{{title}}</div>
+        <br>
+        <div class="row gx-3 gy-2">
+            {{#each cards}}
+            <div class="card text-bg-dark col-5">
+                <div class="card-header">{{header}} </div>
+                <div class="card-body">
+                    <div class="card-title">{{title}}</div>
+                    <div>{{description}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        {{/with}}
+        <br>
+        <hr>
+    </div>
+    <div>
+        <br>
+        {{#with rest}}
+        <div class="row gx-3 gy-1">
+            {{#each cards}}
+            <div class="card col-6">
+                <div class="card-header text-center">{{header}} </div>
+                <div class="card-body">
+                    <div class="card-title text-center">{{title}}</div>
+                    <p class="text-center">{{description}}</p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary">{{button}}</button type="button">
+                    </div>
+                    <br>
+                    <div class="card-footer text-center">{{footer}}</div>
+                </div>
+
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+        <br>
+        <hr>
+    </div>
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
