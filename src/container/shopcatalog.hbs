@@ -1,0 +1,141 @@
+<div class="p-4">
+    {{#with navigation}}
+    <div class="card">
+        <div class="nav">
+            {{#each links}}
+            <div class="nav-item">
+                {{#if href}}
+                <a class="nav-link" href="{{href}}">{{text}} </a>
+                {{else}}
+                <a class="nav-link disabled">{{text}}</a>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+    <div class="py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+                {{else}}
+                <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </nav>
+    </div>
+    <div class="py-4">
+        <h1 class="mb-4">{{header}}</h1>
+        <div class="row">
+            {{#each sortBlock}}
+            <div class="col-3">
+                <select class="form-select form-select-sm">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    {{#with filterBlock}}
+                    <div class="">
+                        <div class="mb-3">{{sellers.title}} </div>
+                        <div class="">
+                            {{#each sellers.list}}
+                            <div class="form-check mb-1">
+                                <label class="form-check-label">{{value}}</label>
+                                <input name="options" type="checkbox" class="form-check-input">
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <div class="mb-3">{{brands.title}} </div>
+                        <div class="mb-3">
+                            <input placeholder="{{brands.input.placeholder}}" class="form-control form-control">
+                        </div>
+                        <div class="">
+                            {{#each brands.options}}
+                            <div class="form-check mb-1">
+                                <label class="form-check-label">{{value}}</label>
+                                <input name="options" type="checkbox" class="form-check-input">
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <div class="mb-3">{{price.title}} </div>
+                        <div class="mb-3">
+                            <input placeholder="{{price.range.from}}" class="form-control form-control">
+                        </div>
+                        <div class="mb-3">
+                            <input placeholder="{{price.range.to}}" class="form-control form-control">
+                        </div>
+                        <div class="mb-2">
+                            <a class="btn btn-outline-secondary" href="{{price.button.link}}">{{price.button.text}}</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        {{#each filterList}}
+                        <div class="mb-1">{{title}}</div>
+                        {{#each options}}
+                        <div class="form-check mb-1">
+                            <label class="form-check-label">{{value}}</label>
+                            <input name="options" type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                        <hr>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                {{#each goodsList}}
+                {{> catalogItem}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="my-5">
+        {{#with service}}
+        <div class="text-bg-success p-2">
+            <h2 class="text-center">{{title}}</h2>
+            <p class="text-center">{{description}} </p>
+            {{#each buttons}}
+            <div class="text-center p-2">
+                <a class="btn btn-primary" href="{{link}}">{{text}} </a>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+    <hr>
+    <div class="row p-1">
+        {{#each footer}}
+        <div class="col-2">
+            {{#each this}}
+            <div class="nav">
+                <div class="nav-item">
+                    <a class="nav-link" href="{{link}}">{{text}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</div>
