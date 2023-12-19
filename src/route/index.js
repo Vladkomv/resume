@@ -3384,5 +3384,15 @@ router.get('/shopreview', function (req, res) {
 
 // ================================================================
 
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    // ↙ сюди вводимо JSON дані
+    layout: 'basic',
+  })
+})
+
+// ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
