@@ -41,7 +41,91 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    buttons: [
+      {
+        text: 'Biography',
+        link: '/bio',
+      },
+      {
+        text: 'Education',
+        link: '/education',
+      },
+      {
+        text: 'My car',
+        link: '/car',
+      },
+      {
+        text: 'Social',
+        link: '/facebook',
+      },
+      {
+        text: 'JavaScript',
+        link: '/js',
+      },
+      {
+        text: 'My mac',
+        link: '/mac',
+      },
+      {
+        text: 'Person',
+        link: '/person',
+      },
+      {
+        text: 'Cultural Tour',
+        link: '/program',
+      },
+      {
+        text: 'Shopcart',
+        link: '/shopcart',
+      },
+      {
+        text: 'Shopcatalog',
+        link: '/shopcatalog',
+      },
+      {
+        text: 'Shophome',
+        link: '/shophome',
+      },
+      {
+        text: 'Shoporder',
+        link: '/shoporder',
+      },
+      {
+        text: 'Shopprofile',
+        link: '/shopprofile',
+      },
+      {
+        text: 'Shopreview',
+        link: '/shopreview',
+      },
+      {
+        text: 'Skills',
+        link: '/skills',
+      },
+      {
+        text: 'Summary',
+        link: '/summary',
+      },
+      {
+        text: 'Stack Overflow',
+        link: '/task21',
+      },
+      {
+        text: 'Innovation',
+        link: '/task22',
+      },
+      {
+        text: 'Welcome',
+        link: '/task31',
+      },
+      {
+        text: 'Work history',
+        link: '/work',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 

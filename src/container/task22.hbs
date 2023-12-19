@@ -3,36 +3,36 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     <h1 class="text-center">{{page_header.title}} </h1>
     <p class="text-center text-uppercase">{{page_header.description}} </p>
     <section class="card">
         {{#with section}}
         <div class="card-body">
             <h2 class="display-6 text-end">{{about_us.title_list.main}}</h2>
-            <h2 class="h2 text-end">{{about_us.title_list.sub}}</h2>
-            <br>
-            <div>
+            <h2 class="h2 text-end mb-3">{{about_us.title_list.sub}}</h2>
+
+            <div class="mb-5">
                 <button type="button" class="btn btn-outline-info">{{about_us.button.text}} </button>
             </div>
-            <br>
-            <br>
-            <div class="display-5 text-start">{{advantage.title}}</div>
-            <br>
-            <div class="card">
+
+
+            <div class="display-5 text-start mb-5">{{advantage.title}}</div>
+
+            <div class="card mb-4">
                 <div class="card-body">
-                    <div class="display-4 text-start">{{advantage.efficiency.title}}</div>
-                    <br>
+                    <div class="display-4 text-start p-4">{{advantage.efficiency.title}}</div>
+
                     <h6>{{advantage.efficiency.sub_title}}</h6>
-                    <p>{{advantage.efficiency.description}} </p>
-                    <br>
+                    <p class="p-4">{{advantage.efficiency.description}} </p>
+
                     <div>
                         <button type="button" class="btn btn-outline-warning">{{advantage.efficiency.button}}</button>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="card">
+
+            <div class="card mb-4">
                 <div class="card-body">
                     <div class="display-4 text-center">{{advantage.innovation.title}}</div>
                     <br>
@@ -44,8 +44,8 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="card">
+
+            <div class="card mb-5">
                 <div class="card-body">
                     <div class="display-4 text-end">{{advantage.collaboration.title}}</div>
                     <br>
@@ -58,10 +58,10 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <div class="display-5 text-start">{{agreement.title}}</div>
-            <br>
+
+
+            <div class="display-5 text-start mb-4">{{agreement.title}}</div>
+
             <div class="card">
                 <div class="card-body">
                     <h5>{{agreement.info.sub_title}}</h5>

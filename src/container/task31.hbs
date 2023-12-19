@@ -3,10 +3,10 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     <br>
     {{#with navigation}}
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-6">
             <ul class="row">
                 {{#each links}}
@@ -19,23 +19,23 @@
         </div>
     </div>
     {{/with}}
-    <br>
+
     <hr>
-    <div class="row">
+    <div class="row mb-4">
         <h1>{{header.title}} </h1>
-        <p class="col-6">{{header.description}} </p>
-        <br>
+        <p class="col-6 mb-4">{{header.description}} </p>
+
         <div>
             <button class="btn btn-primary" type="button" href="{{header.button.href}}">{{header.button.text}}</button>
         </div>
     </div>
-    <br>
+
     <hr>
-    <div>
+    <div class="mb-4">
         {{#with city}}
-        <h2>{{title}} </h2>
-        <br>
-        <div class="row">
+        <h2 class="mb-4">{{title}} </h2>
+
+        <div class="row mb-4">
             <div class="col-10">
                 <ul class="row gy-3 gx-2">
                     {{#each cards}}
@@ -55,15 +55,15 @@
 
         </div>
         {{/with}}
-        <br>
+
         <hr>
     </div>
-    <div class="">
+    <div class="mb-4">
         {{#with winner}}
         <h2>{{title}} </h2>
         <br>
         {{#with table}}
-        <div>
+        <div class="mb-4">
             <table class="table row">
                 <thead class="col-8">
                     <tr class="row">
@@ -86,14 +86,14 @@
         </div>
         {{/with}}
         {{/with}}
-        <br>
+
         <hr>
     </div>
-    <div>
+    <div class="mb-4">
         {{#with gallery}}
         <h2>{{title}} </h2>
         <br>
-        <div>
+        <div class="mb-5">
             <ul class="row">
                 {{#each cards}}
                 <li class="col-4 card">
@@ -109,15 +109,14 @@
 
         </div>
         {{/with}}
-        <br>
-        <br>
+
         <hr>
     </div>
-    <div class="">
-        <br>
+    <div class="mb-4">
+
         {{#with relaxion}}
-        <div class="display-3">{{title}}</div>
-        <br>
+        <div class="display-3 mb-4">{{title}}</div>
+
         <div class="row gx-3 gy-2">
             {{#each cards}}
             <div class="card text-bg-dark col-5">
@@ -134,7 +133,7 @@
         <br>
         <hr>
     </div>
-    <div>
+    <div class="mb-4">
         <br>
         {{#with rest}}
         <div class="row gx-3 gy-1">

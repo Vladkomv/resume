@@ -3,21 +3,21 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     <h1>My car</h1>
     <hr>
 
     <h2>Manufacturer {{make}} </h2>
-    <div>Model: {{model}} {{year}} color - {{color}} </div>
-    <br>
-    <div>
+    <div class="mb-4">Model: {{model}} {{year}} color - {{color}} </div>
+
+    <div class="p-5">
         {{> title data="Features of car"}}
 
         <div>
             {{#with features}}
-            <div>
+            <div class="p-3">
                 {{#with interior}}
-                <div>
+                <div class="p-2">
                     <strong class="badge text-bg-primary">Seats:</strong> {{seats.material}}, {{seats.color}} color,
                     {{#if seats.heated}}
                     <span>heated and </span>
@@ -26,8 +26,8 @@
                     <span>ventilated</span>
                     {{/if}}
                 </div>
-                <br>
-                <div>
+
+                <div class="p-2">
                     <strong class="badge text-bg-secondary">Dashboard:</strong> {{dashboard.material}},
                     {{dashboard.color}} color,
                     {{#if dashboard.display.touchscreen}}
@@ -35,8 +35,8 @@
                         {{dashboard.display.resolution}}, touchscreen.</span>
                     {{/if}}
                 </div>
-                <br>
-                <div>
+
+                <div class="p-2">
                     <strong class="badge text-bg-success">Audio:</strong> {{audio.system}}, {{audio.speakers}} pcs,
                     {{#if audio.subwoofer}} <span>with subwoofer,</span> {{/if}}
                     {{#if audio.bluetooth}} <span>with bluetooth,</span> {{/if}}
@@ -45,25 +45,28 @@
 
                 {{/with}}
             </div>
-            <br>
-            <div>
+
+            <div class="p-3">
                 {{#with exterior}}
-                <div><strong class="badge text-bg-danger">Wheels: </strong>{{wheels.size}}, type {{wheels.type}},
+                <div class="p-2"><strong class="badge text-bg-danger">Wheels: </strong>{{wheels.size}}, type
+                    {{wheels.type}},
                     {{wheels.color}} color. </div>
-                <br>
-                <div><strong class="badge text-bg-warning">Headlights: </strong>{{headlights.type}}, brightness
+
+                <div class="p-2"><strong class="badge text-bg-warning">Headlights: </strong>{{headlights.type}},
+                    brightness
                     {{headlights.brightness}},
                     {{#if headlights.automatic}} <span>automatic</span> {{/if}}.
                 </div>
-                <br>
-                <div><strong class="badge text-bg-info">Sunroof: </strong>{{sunroof.size}}, {{sunroof.type}} type,
+
+                <div class="p-2"><strong class="badge text-bg-info">Sunroof: </strong>{{sunroof.size}}, {{sunroof.type}}
+                    type,
                     {{#if sunroof.automatic}} <span>automatic</span> {{/if}}.
                 </div>
 
                 {{/with}}
             </div>
-            <br>
-            <div>
+
+            <div class="p-3">
                 {{#with safety}}
                 <div><strong class="badge text-bg-light">Safety: </strong>airbags front - {{airbags.front}}, airbags
                     side - {{airbags.side}},
@@ -78,8 +81,7 @@
                 {{/with}}
             </div>
             {{/with}}
-            <br>
-            <div>
+            <div class="p-2">
                 {{#with engine}}
                 <div><strong class="badge text-bg-dark">Engine: </strong> {{type}} {{displacement}}, {{horsepower}} HP,
                     {{torque}} Nm,
@@ -87,8 +89,8 @@
                 </div>
                 {{/with}}
             </div>
-            <br>
-            <div>
+
+            <div class="p-2">
                 {{#with fuel_economy}}
                 <div><strong class="badge rounded-pill text-bg-warning">Fuel consumption: </strong> </div>
                 <div>city - {{city}} </div>
@@ -96,7 +98,7 @@
                 <div>combined - {{combined}} </div>
                 {{/with}}
             </div>
-            <br>
+
             <div>
                 {{#with price}}
                 <div><strong class="badge rounded-pill text-bg-success">Price:</strong> </div>

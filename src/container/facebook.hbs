@@ -3,35 +3,35 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     <h1>{{name}}</h1>
     <hr>
 
-    <h2>Users:</h2>
+    <h2 class="mb-3">Users:</h2>
     <div>
         <ul class="list-group">
             {{#each users}}
             <li class="list-group-item">
                 <div>User {{id}}: {{name}} </div>
                 <div>Gender: {{gender}} </div>
-                <div>Age: {{age}} </div>
-                <br>
-                <div>Friends:
+                <div class="mb-3">Age: {{age}} </div>
+
+                <div class="mb-3">Friends:
                     <ul class="list-group">
                         {{#each friends}}
                         <li class="list-group-item">
                             <div>User {{id}}: {{name}} </div>
                             <div>Gender: {{gender}} </div>
-                            <div>Age: {{age}} </div>
-                            <br>
+                            <div class="mb-3">Age: {{age}} </div>
+
                             <div>Mutual friends:
                                 <ul class="list-group">
                                     {{#each mutual_friends}}
                                     <li class="list-group-item">
                                         <div>User {{id}}: {{name}} </div>
                                         <div>Gender: {{gender}} </div>
-                                        <div>Age: {{age}} </div>
-                                        <br>
+                                        <div class="mb-3">Age: {{age}} </div>
+
                                         {{#if mutual_friends}}
                                         <div>Mutual friends:
                                             <ul class="list-group">
@@ -55,8 +55,8 @@
                                     {{#each groups}}
                                     <li class="list-group-item">
                                         <div>Group {{id}}: {{name}} </div>
-                                        <div>({{description}}) </div>
-                                        <br>
+                                        <div class="mb-3">({{description}}) </div>
+
                                         <div>members:
                                             <ul class="list-group">
                                                 {{#each members}}
@@ -77,15 +77,15 @@
                         {{/each}}
                     </ul>
                 </div>
-                <br>
+
                 {{#if groups}}
                 <div>Groups:
                     <ul class="list-group">
                         {{#each groups}}
-                        <li class="list-group-item">
+                        <li class="list-group-item p-3">
                             <div>Group {{id}}: {{name}} </div>
-                            <div>({{description}}) </div>
-                            <br>
+                            <div class="mb-3">({{description}}) </div>
+
                             <div>members:
                                 <ul class="list-group">
                                     {{#each members}}
