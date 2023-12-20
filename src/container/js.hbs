@@ -3,28 +3,27 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
 --}}
 
-<div>
+<div class="p-5">
     <h1>{{name}} </h1>
     <hr>
     {{> title data="Description"}}
-    <div>{{description}} </div>
-    <br>
+    <div class="mb-3">{{description}} </div>
+
     {{> title data="History"}}
-    <div>{{history.founder}} wrote this language in {{history.year}} </div>
-    <br>
-    <br>
+    <div class="mb-5">{{history.founder}} wrote this language in {{history.year}} </div>
+
 
     {{> title data="Types of Js"}}
-    <div aria-label="breadcrumb">
+    <nav class="py-2" aria-label="breadcrumb">
         {{#each types}}
-        <ul class="breadcrumb">
+        <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">{{this}}</a></li>
-        </ul>
+        </ol>
         {{/each}}
-    </div>
-    <br>
+    </nav>
+
     {{> title data="Syntax"}}
-    <div>
+    <div class="p-5">
         {{#with syntax}}
         <div aria-label="Page navigation example">
             {{#each variables}}
@@ -33,7 +32,7 @@
             </ul>
             {{/each}}
         </div>
-        <br>
+
         <div aria-label="Page navigation example">
             {{#each functions}}
             <ul class="pagination">
@@ -41,7 +40,7 @@
             </ul>
             {{/each}}
         </div>
-        <br>
+
         <div aria-label="Page navigation example">
             {{#each conditionals}}
             <ul class="pagination">
@@ -49,15 +48,15 @@
             </ul>
             {{/each}}
         </div>
-        <br>
-        <div aria-label="Page navigation example">
+
+        <div class="mb-3" aria-label="Page navigation example">
             {{#each loops}}
             <ul class="pagination">
                 <li class="page-item"><a class="page-link" href="#">{{this}}</a> </li>
             </ul>
             {{/each}}
         </div>
-        <br>
+
         <div aria-label="Page navigation example">
             {{#each classes}}
             <ul class="pagination">
@@ -67,36 +66,36 @@
         </div>
         {{/with}}
     </div>
-    <br>
+
     {{> title data="Features of Js"}}
-    <div aria-label="breadcrumb">
+    <div class="p-5" aria-label="breadcrumb">
         {{#each features}}
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">{{this}}</a></li>
         </ul>
         {{/each}}
     </div>
-    <br>
+
     {{> title data="libraries of Js"}}
-    <div>
+    <div class="p-5">
         {{#each libraries}}
         <ul>
             <li class="badge rounded-pill text-bg-info"><a href="#">{{this}}</a></li>
         </ul>
         {{/each}}
     </div>
-    <br>
+
     {{> title data="Tools of Js"}}
-    <div>
+    <div class="p-5">
         {{#each tools}}
         <ul>
             <li class="badge rounded-pill text-bg-info"><a href="#">{{this}}</a></li>
         </ul>
         {{/each}}
     </div>
-    <br>
+
     {{> title data="Community of Js"}}
-    <div>
+    <div class="p-5">
         {{#each community}}
         <ul>
             <li class="badge rounded-pill text-bg-info">
@@ -106,7 +105,7 @@
         </ul>
         {{/each}}
     </div>
-    <br>
+
 
 </div>
 

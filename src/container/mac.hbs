@@ -3,51 +3,51 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     <h1>My mac</h1>
     <hr>
 
     <h2>Name {{name}} </h2>
     <div>Model - {{description}} ({{category}})</div>
-    <div>price - {{price}} $ </div>
-    <br>
+    <div class="mb-3">price - {{price}} $ </div>
+
     <div>
         {{> title data="Features of MacBook Pro"}}
         {{#with features}}
-        <div>
+        <div class="mb-3">
             {{#with processor}}
             <div><strong class="badge text-bg-success">Processor: </strong> {{brand}} {{model}}, {{cores}} cores
                 {{speed}}, cache {{cache}} </div>
             {{/with}}
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             {{#with memory}}
             <div><strong class="badge text-bg-success">Memory: </strong> {{type}} {{size}}, {{speed}} </div>
             {{/with}}
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             {{#with storage}}
             <div><strong class="badge text-bg-success">Storage: </strong> {{type}} {{size}}</div>
             {{/with}}
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             {{#with display}}
             <div><strong class="badge text-bg-info">Display: </strong> {{size}}, resolution - {{resolution}}, technology
                 - {{technology}}, color
                 space - {{color_space}}, brightness - {{brightness}}, refresh rate - {{refresh_rate}}. </div>
             {{/with}}
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             {{#with graphics}}
             <div><strong class="badge text-bg-info">Graphics: </strong> {{brand}} {{model}} {{memory}} </div>
             {{/with}}
         </div>
-        <br>
-        <div> <strong class="badge text-bg-warning">Ports: </strong>
+
+        <div class="mb-3"> <strong class="badge text-bg-warning">Ports: </strong>
             <ul>
                 {{#each ports}}
                 <li>
@@ -64,27 +64,27 @@
             </ul>
 
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             {{#with battery}}
             <div><strong class="badge text-bg-dark">Battery: </strong> {{type}} {{capacity}}. {{life}} </div>
             {{/with}}
         </div>
-        <br>
-        <div>
+
+        <div class="mb-3">
             <div><strong class="badge text-bg-dark">Weight: </strong> {{weight}}</div>
             {{#with dimensions}}
             <div><strong class="badge text-bg-dark">Dimensions: </strong> {{width}} x {{depth}} x {{height}} </div>
             {{/with}}
         </div>
-        <br>
-        <div><strong class="badge text-bg-dark">Operating system: </strong> {{operating_system}}</div>
-        <br>
-        <div> <strong class="badge text-bg-danger">Accessories: </strong>
+
+        <div class="mb-3"><strong class="badge text-bg-dark">Operating system: </strong> {{operating_system}}</div>
+
+        <div class="mb-3"> <strong class="badge text-bg-danger">Accessories: </strong>
             <ul>
                 {{#each accessories}}
                 <li>
-                    <div class="badge text-bg-info"> {{this.name}} ({{this.price}} $) </div>
+                    <div class="badge text-bg-info mb-3"> {{this.name}} ({{this.price}} $) </div>
                 </li>
                 {{/each}}
             </ul>

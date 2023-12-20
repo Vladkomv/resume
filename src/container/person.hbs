@@ -3,13 +3,13 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
 --}}
 
-<div>
+<div class="p-3">
     {{#with person}}
-    <div>
+    <div class="p-3">
         <h1>{{name}}</h1>
     </div>
-    <br>
-    <section>
+
+    <section class="p-5">
         {{> title data="About person"}}
         <hr>
         <div>Gender: {{gender}} </div>
@@ -23,11 +23,11 @@
         </div>
     </section>
     <hr>
-    <section>
+    <section class="p-5">
         {{> title data="Education"}}
-        <ul>
+        <ul class="list-group">
             {{#each education}}
-            <li>
+            <li class="list-group-item">
                 <div>University: {{university}}, {{graduationYear}}.</div>
                 <div>Profession: {{major}}. </div>
                 <div>Degree: {{degree}}.</div>
@@ -36,42 +36,42 @@
         </ul>
     </section>
     <br>
-    <section>
+    <section class="p-5">
         {{> title data='Work history' }}
         <div>
-            <ol>
+            <ol class="list-group">
                 {{#each workExperience}}
-                <li>
+                <li class="list-group-item">
 
-                    <div>Position: {{title}}
-                        <br>
+                    <div class="mb-4">Position: {{title}}
+
                         ({{startDate}} - {{endDate}})
                     </div>
-                    <br>
-                    <div>
+
+                    <div class="mb-4">
                         <hr>
                         <em>Responsibilities:</em>
 
-                        <ul>
+                        <ul class="list-group">
                             {{#each responsibilities}}
-                            <li>
+                            <li class="list-group-item">
                                 <p>{{this}}</p>
                             </li>
                             {{/each}}
                         </ul>
                         <hr>
                     </div>
-                    <br>
-                    <div>
+
+                    <div class="mb-4">
                         <div>
                             Company: <strong>{{company}}</strong> (Year founded: {{year_founded}}).
                             <div>
                                 <p>Industry: {{industry}}</p>
                                 <br>
                                 <p>Employees:</p>
-                                <ul>
+                                <ul class="list-group">
                                     {{#each employees}}
-                                    <li>
+                                    <li class="list-group-item">
                                         <div><strong>{{name}}</strong></div>
                                         <p>Position: {{position}} </p>
                                         <p>Department: {{department}} </p>

@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
 --}}
 
-<div>
+<div class="p-4">
     <div>
         <h1>{{name}}</h1>
     </div>
@@ -12,45 +12,43 @@
     </div>
     <hr>
     <section>
-        <div>
+        <div class="py-2">
             <b>Birthdate:</b> {{birthdate}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-2">
             <b>Birthplace:</b> {{birthplace}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-2">
             <b>Deathdate:</b> {{deathdate}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-2">
             <b>Deathplace:</b> {{deathplace}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-2">
             <b>Nationality:</b> {{nationality}}
         </div>
-        <br>
-        <div>
+
+        <div class="py-4">
             <b>Occupation:</b> {{occupation}}
         </div>
-        <br>
-        <br>
-        <div>
+        <div class="mb-3">
             {{> title data="Knowledge"}}
-            <ul>
+            <ul class="list-group">
                 {{#each known_for}}
-                <li>{{this}} </li>
+                <li class="list-group-item">{{this}} </li>
                 {{/each}}
             </ul>
         </div>
         <hr>
-        <div>
+        <div class="mb-3">
             {{> title data="Education"}}
-            <ul>
+            <ul class="list-group list-group-flush">
                 {{#each education}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         <b>Degree:</b> {{degree}}
                     </div>
@@ -65,11 +63,11 @@
             </ul>
         </div>
         <hr>
-        <div>
+        <div class="mb-3">
             {{> title data="Notable publications:"}}
-            <ul>
+            <ul class="list-group list-group-numbered">
                 {{#each notable_publications}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         <strong>"{{title}}"</strong> - published <i>{{publisher}}</i> in {{year}}
                     </div>
@@ -78,7 +76,7 @@
             </ul>
         </div>
         <hr>
-        <div>
+        <div class="p-3">
             {{> title data="Partners"}}
             <ul>
                 {{#each partners}}
@@ -90,13 +88,13 @@
                 {{/each}}
             </ul>
         </div>
-        <br>
+
         <hr>
-        <div>
+        <div class="p-3">
             {{> title data="Awards:"}}
-            <ul>
+            <ul class="list-group list-group-numbered">
                 {{#each awards}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         <strong>{{title}}</strong> - in {{year}} (<em>{{description}}</em>)
                     </div>
@@ -105,12 +103,12 @@
             </ul>
         </div>
         <hr>
-        <br>
-        <div>
+
+        <div class="p-3">
             {{> title data="Influence of works"}}
-            <ol>
+            <ol class="list-group">
                 {{#each influences}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         {{this}}
                     </div>
@@ -118,12 +116,12 @@
                 {{/each}}
             </ol>
         </div>
-        <br>
-        <div>
+
+        <div class="p-3">
             {{> title data="Influenced by Einstein's work"}}
-            <ol>
+            <ol class="list-group">
                 {{#each influenced}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         {{this}}
                     </div>
@@ -131,13 +129,13 @@
                 {{/each}}
             </ol>
         </div>
-        <br>
+
         <hr>
-        <div>
+        <div class="p-3">
             {{> title data="Einstein quotes"}}
-            <ul>
+            <ul class="list-group">
                 {{#each quotes}}
-                <li>
+                <li class="list-group-item">
                     <p>
                         <q>{{this}}</q>
                     </p>
@@ -145,13 +143,13 @@
                 {{/each}}
             </ul>
         </div>
-        <br>
+
         <hr>
-        <div>
+        <div class="p-3">
             {{> title data="Major discoveries"}}
-            <ul>
+            <ul class="list-group">
                 {{#each major_discoveries}}
-                <li>
+                <li class="list-group-item">
                     <div>
                         <strong>{{title}}</strong> - in {{year}} (<em>{{description}}</em>)
                     </div>
@@ -159,9 +157,9 @@
                 {{/each}}
             </ul>
         </div>
-        <br>
+
         <hr>
-        <div>
+        <div class="p-3">
             {{#with contributions}}
             <h3>{{title}} </h3>
             <div>

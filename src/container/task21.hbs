@@ -3,9 +3,9 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="p-5">
     {{#with heading}}
-    <div class="card">
+    <div class="card mb-3">
         <div class="card-body">
             {{#with main}}
             <h1>{{title}}</h1>
@@ -20,8 +20,8 @@
             {{/with}}
         </div>
     </div>
-    <br>
-    <div class="card">
+
+    <div class="card mb-3">
         <div class="card-body">
             {{#with second}}
             <h2>{{title}}</h2>
@@ -36,8 +36,8 @@
             {{/with}}
         </div>
     </div>
-    <br>
-    <div class="card">
+
+    <div class="card mb-3">
         <div class="card-body">
             {{#with subblock}}
             <h3>{{title}}</h3>
@@ -53,9 +53,9 @@
         </div>
     </div>
     {{/with}}
-    <br>
+
     {{#with nested_display}}
-    <div class="card">
+    <div class="card mb-3">
         <div class="card-body">
             <div class="display-1">{{title}}</div>
             <div class="card">
@@ -75,9 +75,9 @@
         </div>
     </div>
     {{/with}}
-    <br>
+
     {{#with paragraph}}
-    <div class="card">
+    <div class="card mb-3">
         <div class="card-body">
             <p class="text-uppercase">{{title}} </p>
             <p class="text-lowercase">{{text}} </p>

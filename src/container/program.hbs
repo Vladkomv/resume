@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/person"
 --}}
 
-<div>
+<div class="p-5">
     <div>
         <h1>{{program.excursion.name}}</h1>
     </div>
@@ -16,30 +16,30 @@
     <section>
         <div>
             {{> title data="Program of excursion"}}
-            <ul>
+            <ul class="list-group">
                 {{#each program}}
-                <li>
-                    <div>
+                <li class="list-group-item">
+                    <div class="p-2">
                         <strong>{{name}}</strong> (<em>{{type}} - {{duration}} hours </em>)
                     </div>
-                    <br>
-                    <div>
+
+                    <div class="p-4">
                         <strong>Details:</strong>
                     </div>
                     {{#with details}}
                     {{#if museum}}
-                    <div>
+                    <div class="p-4">
                         <h4>{{museum.name}}</h4>
                         <address>
                             ({{museum.location.country}}, {{museum.location.city}}, {{museum.location.address}})
                         </address>
                     </div>
-                    <br>
-                    <div>
+
+                    <div class="p-4">
                         {{> title data="Exhibits"}}
-                        <ul>
+                        <ul class="list-group">
                             {{#each museum.exhibits}}
-                            <li>
+                            <li class="list-group-item mb-2">
                                 <div>
                                     <h4>{{this.name}}</h4>
                                     <div>
@@ -56,7 +56,7 @@
                             </li>
                             {{/each}}
                         </ul>
-                        <div>
+                        <div class="p-5">
                             <h5>Guide - {{guide.name}} ({{guide.rating}}), language:{{guide.language}}
                             </h5>
                         </div>
@@ -71,9 +71,9 @@
                     </div>
                     <br>
                     {{> title data="Performers"}}
-                    <ul>
+                    <ul class="list-group mb-3">
                         {{#each performers}}
-                        <li>
+                        <li class="list-group-item">
                             <div>{{this.name}} ({{this.type}}) </div>
                         </li>
                         {{/each}}
